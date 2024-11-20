@@ -1,33 +1,53 @@
 //one
 
-let numberOne = 10;
-let numberTwo = 20;
-console.log(numberOne + "" + numberTwo);
-console.log(typeof (numberOne + "" + numberTwo));
-console.log(`${numberOne}${numberTwo}`);
-console.log(typeof `${numberOne}${numberTwo}`);
-console.log(numberOne + "\n" + "" + numberTwo);
-
-console.log(`${numberTwo}
-${numberOne}`);
+// Replace ? With Arithmetic Operators
+console.log((((10 ** 20 / 15) % 3) / 190 / 10) % 400); // == 0
 
 //two
-let elzero = document.querySelector("div");
-console.log(elzero.innerHTML);
-console.log(typeof elzero);
 
-//three
+let num = 3;
 
-console.log(`\`I'm In
-\\\\
-Love \\\\ \"\"\" \'\'\'
-\+\+ With \+\+
-\\\"\"\"\\\"\"\"
-\"\"JavaScript\"\"\``);
+// Solution One
+console.log(num ** num / num - num); // 6
 
+// Solution Two
+console.log(num + num); // 6
+
+// Soultion Three
+console.log(++num + --num + --num - ++num); // 6
+
+// Soultion Four
+console.log(num++ + num++ + num / num-- + num++ - ++num); // 6
+
+// Solution Five
+console.log((num * --num) / num); // 6
+
+// Solution Six
+console.log((num / num) * ++num); // 6
+
+// three
+let num2 = "10";
+
+// Solution One
+console.log(+num2 + +num2); // 20
+
+// Solution Two
+console.log(+num2 + --num2 + --num2 - --num2); // 20
+
+// Solution Three
+console.log(--num2 * --num2 - +num2 - +num2); // 20
+
+// Solution Four
+console.log(num2 * num2 - num2); // 20
 
 //four
-let a = 21;
-let b = 20;
 
-console.log(`_${a}_${b}${a}_${b}${a}_${b}${a}_${b}_`); //// _21_2021_2021_2021_20_
+let points = 10;
+points += 3;
+// Write Your Code Here
+
+console.log(points); // 13
+
+// Write Your Code Here
+points -= 5;
+console.log(points); // 8;

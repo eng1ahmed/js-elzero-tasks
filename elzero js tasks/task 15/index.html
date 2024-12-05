@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>111-114</title>
+    <style>
+@import url('https://fonts.googleapis.com/css2?family=Cairo&family=Open+Sans&family=Roboto&display=swap');
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+    margin: 0;
+}
+body div{
+    margin: 20px 0;
+}
+select{
+    padding: 10px 7px;
+    border-radius: 4px;
+    margin-left: 10px;
+}
+form{
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+input{
+  padding: 10px;
+  margin-bottom: 10px;
+}
+form #select{
+  width: 50%;
+}
+    </style>
+  </head>
+  <body>
+
+   
+    <div class="select-box-one">
+      <label for="font">Check a Font</label>
+      <select name="" id="font">
+        <option value="Open-Sans" >Open-Sans</option>
+        <option value="Cairo" selected>Cairo</option>
+        <option value="Roboto" >Roboto</option>
+        <option value="Cursive" >Cursive</option>
+        <option value="Fantasty" >Fantasty</option>
+        <option value="Monospace" >Monospace</option>
+      </select>
+    </div>
+
+    <div class="select-box-two">
+      <label for="color">Check a Color</label>
+      <select name="" id="color">
+        <option value="Red">Red</option>
+        <option value="Blue">Blue</option>
+        <option value="Green">Green</option>
+        <option value="Brown">Brown</option>
+        <option value="Yellow">Yellow</option>
+        <option value="Black">Black</option>
+        <option value="Orange">Orange</option>
+      </select>
+    </div>
+
+    <div class="select-box-Three">
+      <label for="size">Check The Font Size</label>
+      <select name="" id="size">
+<option value="16px">16</option>
+        <option value="18px">18</option>
+        <option value="20px">20</option>
+        <option value="22px">22</option>
+        <option value="24px">24</option>
+        <option value="26px">26</option>
+        <option value="28px">28</option>
+        <option value="30px">30</option>
+      </select>
+    </div>
+    <h1>HERE IS SIMPLE TEXT</h1>
+
+    <br>
+    <br>
+    <hr>
+    <br>
+    <form action="">
+      <input id="one" type="text" placeholder="first name">
+      <input id="two" type="text" placeholder="last name">
+      <input id="three" type="text" placeholder="enter your phone">
+      <select name="" id="select">
+        <option value="One">One</option>
+        <option value="Two">Two</option>
+        <option value="Three">Three</option>
+        <option value="Four">Four</option>
+        <option value="Five">Five</option>
+      </select>
+    </form>
+    <script src="js/main.js"></script>
+  </body>
+</html>

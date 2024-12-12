@@ -1,172 +1,164 @@
-// //introduction
-// let mystring =
-//   "Hello every one my name is ahMed SaYed and i love ahmed elsayed";
-// let regex = /Sayed/gi;
-// console.log(mystring.match(regex));
-// console.log("#".repeat(40));
-// //range
-// let tld = "com net org info code io ";
-// let tldRe = /(org|info|io)/i;
-// console.log(tld.match(tldRe));
-// //  [A-B]
-// let nums = "12345678910";
-// let nrang = /[0-9]/i;
-// console.log(nums.match(nrang));
-// //  [^A-B]
-// let nums2 = "12345678910";
-// let nrang2 = /[^0-2]/gi;
-// console.log(nums2.match(nrang2));
+// // OOP
 
-// let spcn = "1!2@3#4$5%6^7&8*9(";
-// let spcnre = /[^0-9]/gi;
-// console.log(spcn.match(spcnre));
-
-// // practice
-// let prac = "os1 os1os os2 os11 os11os";
-// let practr = /os[5-9]os/g;
-// console.log(prac.match(practr));
-
-// //reg part 2
-// let myString = "AaBbCdefG123!234%^&*";
-// let atozsmall = /[a-z]/g;
-// let notatozsmall = /[^a-z]/g;
-// console.log(myString.match(atozsmall));
-// console.log(myString.match(notatozsmall));
-
-// let myString2 = "AaBbCdefG123!234%^&*";
-// let atozcap = /[A-Z]/g;
-// let notatozcap = /[^A-Z]/g;
-// console.log(myString.match(atozcap));
-// console.log(myString.match(notatozcap));
-
-// // charcter class one
-
-// let email = "O@@@g...com O@g.net A@Y.com O-g.com o@s.org 1@1.com";
-
-// let dot = /./g;
-// let word = /\W/g;
-// let valid = /\w@\D.(com|net)/g;
-// console.log(email.match(dot));
-// console.log(email.match(word));
-// console.log(email.match(valid));
-
-// // . => any charcter
-// // \w => matches word charcters
-// // \W => non charcters
-// // \d => any digital 0-9
-// // \D => any non digital
-// // \s whitespace charcters
-// // \S non whitespace charcters
-
-// // charcter class one
-
-// let names = "Sayed 15pam 25pam 35pam Spam4 Spam5 Osama Ahmed Aspamo";
-
-// let re = /(\bspam|spam\b)/gi;
-// console.log(names.match(re));
-
-// console.log(re.test(names));
-
-// // Quantifiers
-
-// // n+...=> one or more
-// // n*...=> zero or more
-// // n?...=> zero or one
-
-// // Quantifiers part 2
-
-// // n{x} => number of
-// // n{x,y} => range
-// // n{x,} => at lest x
-
-// let serials = "S100S S3000S S50000S S950000S";
-
-// console.log(serials.match(/s\d{3}s/gi));
-// console.log(serials.match(/s\d{4,5}s/gi));
-// console.log(serials.match(/s\d{4,}s/gi));
-
-// // Quantifiers part 3
-
-// // $ => end with something
-// // ^ => start with something
-// // ?= => followed by something
-// // ?! => followed by something
-
-// let myString3 = "we love programming";
-// let names2 = "10osamaZ 2AhmedZ 3Mohammed 4MoustafaZ %GamalZ";
-
-// console.log(names2.match(/\d\w{5}(?=z)/gi));
-// console.log(names2.match(/\d\w{8}(?!z)/gi));
-// console.log(/lz$/gi.test(names2));
-
-// console.log("#".repeat(40))
-// // form practice
-
-// document.getElementById("register").onsubmit = function () {
-//   let phoneInp = document.getElementById("phone").value;
-//   let phonere = /\(\d{4}\)\s\d{3}-\d{4}/;
-//   let validationres = phonere.test(phoneInp);
-
-// if(validationres === false){
-// return false;
+// //constructor function
+// class User {
+//     constructor(id, username, salary) {
+//         this.i = id;
+//         this.u = username || "unknown";
+//         this.s = salary < 6000 ? +500 : salary;
+//         this.msg = function(){
+//             return `Hello ${this.u} your salary is ${this.s}`
+//         }
+//     }
 // }
+// let userOne = new User(100, "Elzero", 5000);
+// let userTwo = new User(101, "Hassan", 6000);
+// let userThree = new User(102, "Sayed", 7000);
 
-//   return true;
-// };
+// console.log(userOne.i);
+// console.log(userOne.msg());
 
-// //  - Test Your Regular Expressions
+// console.log(userTwo.i);
+// console.log(userTwo.msg());
 
-//start assignment
-let ip = "2001:db8:3333:4444:5555:6666:7777:8888";
-let regip = /(\d+|\D+)+/gi;
-console.log(ip.match(regip));
+// //instance of
+// //constructor
 
-//two
-let specialNames = "Os10O OsO Os100O Osa100O Os1000 Os100m";
-let regname = /os\d*o/gi;
-console.log(specialNames.match(regname));
-// Output
-// ['Os10O', 'OsO', 'Os100O']
+// One
+class Car {
+  constructor(name, model, price) {
+    this.n = name;
+    this.m = model;
+    this.p = price;
+    this.Msg = function () {
+      return `Car One Name Is ${this.n} And Model Is ${this.m} And Price Is ${this.p}`;
+    };
+  }
+  run() {
+    return "Car Is Running Now";
+  }
+  stop() {
+    return "Car Is stoping Now";
+  }
+}
+let carOne = new Car("MG", 2022, 420000);
+console.log(carOne.Msg());
+console.log(carOne.run());
+// Needed Output
+
+// ("Car One Name Is MG And Model Is 2022 And Price Is 420000");
+// ("Car Is Running Now");
+
+// Two
+class Phone {
+  constructor(name, serial, price) {
+    this.name = name;
+    this.serial = serial;
+    this.price = price;
+  }
+}
+
+// Write Tablet Class Here
+class Tablet extends Phone {
+  constructor(name, serial, price, size) {
+    super(name, serial, price);
+    this.s = size === undefined ? (this.s = "Unknown") : size;
+  }
+  fullDetails() {
+    return `${this.name} Serial is ${this.serial} And Size Is ${this.s}`;
+  }
+}
+
+let TabletOne = new Tablet("iPad", 100200300, 1500, 12.9);
+let TabletTwo = new Tablet("Nokia", 350450650, 800, 10.5);
+let TabletThree = new Tablet("LG", 250450650, 650);
+
+console.log(`${TabletOne.fullDetails()}`);
+// iPad Serial is 100200300 And Size Is 12.9
+
+console.log(`${TabletTwo.fullDetails()}`);
+// Nokia Serial is 350450650 And Size Is 10.5
+
+console.log(`${TabletThree.fullDetails()}`);
+// LG Serial is 250450650 And Size Is Unknown
 
 //three
-let phone = "+(995)-123 (4567)";
-let regphone = /\+\(\d{3}\)-\d{3}\s\(\d{4}\)/gi;
-// let phoneRe = /\+\(\d{3}\)-\d{3}\s\(\d{4}\)/ig;
-console.log(phone.match(regphone));
+// Edit The Class
+class User {
+  #c;
+  constructor(username, card) {
+    this.u = username;
+    this.#c = card;
+  }
+  creditCard() {
+    return this.#c.toString().match(/\d{4}/g).join("-");
+  }
+  get showData() {
+    return `Hello ${this.u} Your Credit Card Number Is ${this.creditCard()}`;
+  }
+}
+
+// Do Not Edit Anything Below
+
+let userOne = new User("Osama", "1234-5678-1234-5678");
+let userTwo = new User("Ahmed", "1234567812345678");
+let userThree = new User("Ghareeb", 1234567812345678);
+
+console.log(userOne.showData);
+// Hello Osama Your Credit Card Number Is 1234-5678-1234-5678
+
+console.log(userTwo.showData);
+// Hello Ahmed Your Credit Card Number Is 1234-5678-1234-5678
+
+console.log(userThree.showData);
+// Hello Ghareeb Your Credit Card Number Is 1234-5678-1234-5678
+
+console.log(userOne.c); // Prevent Accessing To Card Property Here
+// Undefined
 
 //four
-let re = /https?:\/\/(?:[-\w]+\.)?([-\w]+)\.\w+(?:\.\w+)?\/?.*/i;
-// https?:\/\/: Matches either http:// or https:// at the beginning of the URL.
-// (?:[-\w]+\.)?: Matches an optional subdomain part, like www., subdomain., etc.
-// ([-\w]+): Captures the main domain name (e.g., google, example) in a group.
-// \.\w+: Matches the top-level domain (e.g., .com, .org, .net).
-// (?:\.\w+)?: Matches an optional second-level top-level domain (e.g., .co.uk).
-// **\/?.\**: Matches any character, including /, zero or more times.
-// i: Makes the match case-insensitive.
+// Do Not Edit Below
+let myStr = "Elzero";
+String.prototype.addLove = function () {
+  return `I love ${this} web school`;
+};
+console.log(myStr.addLove()); // I Love Elzero Web School
 
-// five
-let date1 = "25/10/1982";
-let date2 = "25 - 10 - 1982";
-let date3 = "25 10 1982";
-let date4 = "25 10 82";
+//five
+const myObj = {
+  username: "Elzero",
+  id: 100,
+  score: 1000,
+  country: "Egypt",
+};
 
-let date = /\d{2}(\/|\s-\s|\s)\d{2}(\/|\s-\s|\s)(\d{4}|\d{2})/gi;
+// Write Your Code Here
+Object.defineProperty(myObj, "score", {
+  writable: false,
+  enumerable: true,
+  configurable: true,
+});
+Object.defineProperty(myObj, "id", {
+  writable: true,
+  enumerable: false,
+  configurable: true,
+});
 
-console.log(date1.match(date)); // "25/10/1982"
-console.log(date2.match(date)); // "25 - 10 - 1982"
-console.log(date3.match(date)); // "25 10 1982"
-console.log(date4.match(date)); // "25 10 82"
+delete myObj.country;
+myObj.score = 500;
 
-// six
-let url1 = "elzero.org";
-let url2 = "http://elzero.org";
-let url3 = "https://elzero.org";
-let url4 = "https://www.elzero.org";
-let url5 = "https://www.elzero.org:8080/articles.php?id=100&cat=topics";
+for (let prop in myObj) {
+  console.log(`${prop} => ${myObj[prop]}`);
+}
 
-let url = /(https?:\/\/(?:[-\w]+\.)?)?([-\w]+)\.\w+(?:\.\w+)?\/?.*/ig; // Write Your Pattern Here
-console.log(url1.match(url));
-console.log(url2.match(url));
-console.log(url3.match(url));
-console.log(url4.match(url));
-console.log(url5.match(url));
+console.log(myObj);
+
+// Needed Output
+
+("username => Elzero");
+("score => 1000");
+{
+  username: "Elzero";
+  score: 1000;
+  id: 100;
+}
